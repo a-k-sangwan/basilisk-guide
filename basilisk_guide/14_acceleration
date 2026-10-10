@@ -109,7 +109,7 @@ arrangement.
 
 ![Figure 14.1: Balanced-force arrangement. On each face the interfacial force
 (red) and the pressure gradient (blue) are both differences of the same two
-cell values, weighted by the same $\alpha$, so they can cancel exactly.](figures/fig_balanced.png)
+cell values, weighted by the same $\alpha$, so they can cancel exactly.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_balanced.png)
 
 On an adaptive mesh the same reasoning requires $f$ and $p$ to be
 interpolated the same way at fine/coarse faces, so `iforce.h`
@@ -146,7 +146,7 @@ back on fitting a parabola (paraboloid in 3D) to interface positions.
 
 ![Figure 14.2: Height function. Summing $f$ down the outlined column gives the
 height of the interface in that column. Neighbouring columns give the slope
-and curvature.](figures/fig_heights.png)
+and curvature.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_heights.png)
 
 ## Surface tension
 

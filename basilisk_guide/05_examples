@@ -47,7 +47,7 @@ solutions of Ghia, Ghia and Shin (1982).
 
 ![Figure 5.1: Lid-driven cavity at $Re = 1000$, $64\times64$ cells, steady state.
 Left: vorticity (colour range $\pm5$). Right: horizontal velocity along the
-vertical centre line.](figures/fig_cavity.png)
+vertical centre line.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_cavity.png)
 
 ## Flow past a cylinder: a vortex street {#sec:ex-karman}
 
@@ -85,7 +85,7 @@ $St = D/(U_0T) = 0.20$ (figure 5.2).
 
 ![Figure 5.2: Flow past a cylinder at $Re = 160$. Top: vorticity at $t = 15$
 (range $\pm10$; the cylinder is at the left). Bottom: drag and lift
-coefficients.](figures/fig_karman.png)
+coefficients.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_karman.png)
 
 ## A rising bubble {#sec:ex-bubble}
 
@@ -121,7 +121,7 @@ the bubble flattens into an ellipse (figure 5.3).
 ![Figure 5.3: Rising bubble, $128\times32$ cells. Left: interface at
 $t = 0, 1, 2, 3$ from `output_facets()`; the whole width of the box
 is shown, and the lower edge $y = 0$ is the symmetry plane. Right: rise
-velocity of the bubble.](figures/fig_bubble.png)
+velocity of the bubble.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_bubble.png)
 
 ## A collapsing water column {#sec:ex-dambreak}
 
@@ -159,7 +159,7 @@ runs up the wall (figure 5.4).
 ![Figure 5.4: Collapsing water column, maximum level 7. Left: the interface at
 four times. At $t = 0$ the column's edges lie exactly on cell faces, so every
 cell is full or empty and `output_facets()` writes nothing; the initial
-rectangle is drawn directly. Right: position of the front along the floor.](figures/fig_dambreak.png)
+rectangle is drawn directly. Right: position of the front along the floor.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_dambreak.png)
 
 ## Where to go next
 

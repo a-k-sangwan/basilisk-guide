@@ -54,7 +54,7 @@ $$
 ![Figure 11.1: BCG upwinding in one direction. Within the upwind cell the field is
 a straight line with slope $\partial_x q$. The value that crosses the face
 during the step is, on average, the value at the foot of the characteristic,
-half a time step upstream of the face: $q_i + (\Delta/2 - u\Delta t/2)\partial_x q$.](figures/fig_bcg.png)
+half a time step upstream of the face: $q_i + (\Delta/2 - u\Delta t/2)\partial_x q$.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_bcg.png)
 
 The slope $\partial_x q$ is either the centred difference
 $(q_{i+1} - q_{i-1})/(2\Delta)$ or, if the field has a `gradient` attribute,

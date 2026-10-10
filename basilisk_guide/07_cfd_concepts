@@ -39,7 +39,7 @@ it holds whatever formula is used for the face flux.
 ![Figure 7.1: A finite-volume cell. The unknown is the cell average $\bar q_{ij}$;
 it changes by the difference of the fluxes through its four faces. The flux
 through a shared face is computed once and used with opposite signs by the
-two cells, which makes the scheme conservative.](figures/fig_fvcell.png)
+two cells, which makes the scheme conservative.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_fvcell.png)
 
 > **In the code: `bcg.h`, function `advection()`**
 >
@@ -118,7 +118,7 @@ they do not.
 numerical diffusion in (7.5). The unlimited second-order
 scheme keeps it steeper but oscillates. The limited scheme is steep and
 oscillation-free. Basilisk's BCG scheme ([chapter 11](11_advection)) is of the
-third kind when a limiter is set on the field.](figures/fig_advcompare.png)
+third kind when a limiter is set on the field.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_advcompare.png)
 
 > **In the code: `utils.h`**
 >
@@ -144,7 +144,7 @@ analysis gives the same bound for upwind.
 ![Figure 7.3: Domain of dependence. The dashed lines are characteristics
 $x - ct = \text{const}$ through the new point. When $C < 1$ the
 characteristic lands inside the cells used by the scheme; when $C > 1$ it
-lands outside and the scheme is missing the information it needs.](figures/fig_cfl.png)
+lands outside and the scheme is missing the information it needs.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_cfl.png)
 
 Basilisk uses $C \le 0.8$ for the velocity (`CFL = 0.8` in
 `centered.h`) and lowers it to $0.5$ when VOF is used
@@ -212,7 +212,7 @@ two is the *approximate projection* of [section 15.5](15_projection#sec:approx-p
 
 ![Figure 7.4: A checkerboard pressure. The central difference across the outlined
 cell uses its two neighbours, which hold the same value, so the computed
-gradient is zero everywhere although the pressure is far from uniform.](figures/fig_checker.png)
+gradient is zero everywhere although the pressure is far from uniform.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_checker.png)
 
 ## Representing an interface
 

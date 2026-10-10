@@ -25,7 +25,7 @@ $p^{n+1}$ is the full pressure, not an increment.
 divergence-free fields is drawn as a plane. The pressure gradient term is
 the part of $\mathbf{u}_f^\star$ that is orthogonal to that plane (in the inner
 product weighted by $\rho$), and subtracting it leaves the closest
-divergence-free field.](figures/fig_projection.png)
+divergence-free field.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_projection.png)
 
 ## The discrete projection
 

@@ -20,7 +20,7 @@ finite-volume cut-cell method.
 ![Figure 19.1: A cut cell (outlined), with fractions computed for the circle drawn. $c_s$ is its open volume fraction; each face
 has its own open area fraction $f_s$. The solid surface inside the cell is
 represented by a straight segment (a plane facet in 3D) whose normal is
-computed from the face fractions.](figures/fig_cutcell.png)
+computed from the face fractions.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_cutcell.png)
 
 ## Finite volumes in a cut cell
 
@@ -64,7 +64,7 @@ it uses the cell centre value.
 ![Figure 19.2: Johansen--Colella gradient at an embedded wall. The normal from the
 wall centroid crosses two grid lines; values there ($v_0$, $v_1$) are
 interpolated from three cell centres on each line, and a quadratic through
-the wall value and these two points gives the wall gradient.](figures/fig_jc.png)
+the wall value and these two points gives the wall gradient.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_jc.png)
 
 ## Boundary conditions on the embedded surface
 

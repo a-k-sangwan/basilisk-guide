@@ -43,7 +43,7 @@ average of the (smoothed) volume fraction of the two cells sharing the face
 ![Figure 13.1: Stencil of the $x$ momentum viscous operator in 2D. Vertical faces
 carry $2\mu$ (normal stress), horizontal faces carry $\mu$ (shear stress).
 The green circles are the four $v$ values used for $\partial_x v$ on the top
-face; the same pattern one row lower gives it on the bottom face.](figures/fig_viscstencil.png)
+face; the same pattern one row lower gives it on the bottom face.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_viscstencil.png)
 
 ## Solving the system
 

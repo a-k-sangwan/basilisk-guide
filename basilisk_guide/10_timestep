@@ -10,7 +10,7 @@ events run in this order (all of them are declared with `i++`, so they
 run every step):
 
 ![Figure 10.1: Events executed in one time step of the centered Navier--Stokes
-solver with the two-phase modules.](figures/fig_events.png)
+solver with the two-phase modules.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_events.png)
 
 When a module defines an event with the same name as an existing one, both
 bodies run in that slot. This is how `reduced.h`, `tension.h`,
@@ -33,7 +33,7 @@ $\rho\,\partial_t\mathbf{u}= \dots$ needs.
 
 ![Figure 10.2: Staggering in time. The interface lags the velocity by half a step,
 so density and viscosity are centred in the interval over which the
-velocity is advanced.](figures/fig_timeline.png)
+velocity is advanced.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_timeline.png)
 
 ## Choosing the time step
 

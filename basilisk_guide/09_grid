@@ -23,7 +23,7 @@ leaves one level finer (figure 9.1).
 ![Figure 9.1: Octree/quadtree mesh. Shaded tree nodes are leaves. The red face
 separates a level-1 leaf from two level-2 leaves; the flux through it is
 computed on the fine side and summed for the coarse side so that
-conservation holds across levels.](figures/fig_quadtree.png)
+conservation holds across levels.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_quadtree.png)
 
 ## Where each variable lives
 
@@ -45,7 +45,7 @@ centred velocity are at cell centres (dots). The face velocity $\mathbf{u}_f$, t
 specific volume $\alpha$, the viscosity $\mu$ and the acceleration $\mathbf{a}$ are
 on faces (arrows), normal to the face. The face gradient
 $(p_i - p_{i-1})/\Delta$ is naturally located at the face ${i-\frac 12}$, next to
-$u_{f,{i-\frac 12}}$.](figures/fig_placement.png)
+$u_{f,{i-\frac 12}}$.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_placement.png)
 
 > **In the code: `common.h`**
 >
@@ -93,7 +93,7 @@ divergence-preserving refinement (`refine_face_solenoidal`), and with
 ([section 12.5](12_momentum#sec:momentum-refine)).
 
 ![Figure 9.3: Bilinear prolongation in 2D. The child (red) in the upper-right
-quarter of its parent takes the weights shown in brackets, divided by 16.](figures/fig_prolong.png)
+quarter of its parent takes the weights shown in brackets, divided by 16.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_prolong.png)
 
 ## Adaptive refinement with wavelets {#sec:wavelet}
 

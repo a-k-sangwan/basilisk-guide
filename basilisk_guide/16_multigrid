@@ -46,7 +46,7 @@ is a good *smoother* and a bad *solver*.
 
 ![Figure 16.1: Gauss--Seidel on the 1D Laplacian with 64 cells (computed for this
 document). The oscillating parts of the error vanish in three sweeps; the
-smooth part has lost only about 10% of its amplitude after fifty.](figures/fig_smoothing.png)
+smooth part has lost only about 10% of its amplitude after fifty.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_smoothing.png)
 
 ## The multigrid idea
 
@@ -92,7 +92,7 @@ if by more than 10 it removes one.
 ![Figure 16.2: One Basilisk multigrid cycle. Grey: the residual is averaged down
 to all levels. Blue (R): `nrelax` relaxation sweeps of the correction
 equation. Red: the correction is interpolated up as the starting guess for
-the next finer level.](figures/fig_mgcycle.png)
+the next finer level.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_mgcycle.png)
 
 > **In the code: `poisson.h`, `mg_cycle()`**
 >

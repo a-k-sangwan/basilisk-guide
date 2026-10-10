@@ -14,7 +14,7 @@ ghost centre (figure 18.1).
 ![Figure 18.1: A ghost cell. The boundary value $s_b$ lives on the face, halfway
 between the interior centre and the ghost centre. A Dirichlet condition
 chooses $s_g$ so that the straight line through $s_i$ and $s_g$ passes
-through $s_b$ at the face.](figures/fig_ghost.png)
+through $s_b$ at the face.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_ghost.png)
 
 ## The basic conditions
 

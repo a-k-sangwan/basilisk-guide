@@ -14,7 +14,7 @@ computed for this document with the Youngs normal and Basilisk's
 `line_alpha()`. Numbers are the volume fractions. Each red segment is
 the line that cuts off exactly the area $f$ in its cell with the estimated
 normal. The segments do not join up: PLIC is discontinuous from cell to
-cell, but it conserves the volume in each cell exactly.](figures/fig_plic.png)
+cell, but it conserves the volume in each cell exactly.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_plic.png)
 
 **The line in a cell.** In coordinates scaled to the unit cell
 $[-\tfrac{1}{2},\tfrac{1}{2}]^d$, the interface is
@@ -63,7 +63,7 @@ trigonometric formula.
 
 ![Figure 17.2: The PLIC interface in a unit cell centred at the origin. The normal
 points from water to air. Given $\mathbf{n}$, $\alpha$ is the unique value that
-makes the shaded area equal to $f$.](figures/fig_plic-cell.png)
+makes the shaded area equal to $f$.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_plic-cell.png)
 
 ## Direction-split advection {#sec:split}
 
@@ -102,7 +102,7 @@ above). If the upwind cell is full or empty, $c_f$ is 1 or 0.
 
 ![Figure 17.3: Geometric VOF flux. The hatched strip is the volume that crosses the
 face in one sweep. $c_f$ is the part of it under the reconstructed interface,
-computed exactly from $\mathbf{n}$ and $\alpha$.](figures/fig_vofflux.png)
+computed exactly from $\mathbf{n}$ and $\alpha$.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_vofflux.png)
 
 > **In the code: `vof.h`, `sweep_x()`**
 >

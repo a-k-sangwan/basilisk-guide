@@ -12,7 +12,7 @@ lines in user events, and this chapter derives them.
 ![Figure 20.1: Layout of a numerical wave tank. Waves are generated through a
 velocity inlet backed by a relaxation zone, pass the region of interest,
 and are damped before they reach the outlet. The curves at the bottom are
-the strength $\sigma(x)$ of each layer.](figures/fig_tank.png)
+the strength $\sigma(x)$ of each layer.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_tank.png)
 
 ## The strength profile
 

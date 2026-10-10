@@ -50,7 +50,7 @@ the `properties` event, and so on.
 ![Figure 1.1: Files used by a typical two-phase simulation with a solid body.
 Arrows point from a module to the modules it relies on or feeds. Blue is the
 core solver, orange its numerical building blocks, green the two-phase
-modules and red the body and interfacial forces.](figures/fig_stack.png)
+modules and red the body and interfacial forces.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_stack.png)
 
 ## How to read the boxes
 

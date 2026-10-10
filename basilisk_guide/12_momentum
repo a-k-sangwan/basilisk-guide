@@ -46,7 +46,7 @@ water momentum flux and vice versa.
 ![Figure 12.1: Consistent transport. The hatched region is everything that
 crosses the face during the sweep. Its water part (fraction $c_f$) carries
 water momentum, its air part carries air momentum. Mass and momentum use the
-same geometric volume, so they cannot drift apart.](figures/fig_consistent.png)
+same geometric volume, so they cannot drift apart.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_consistent.png)
 
 ## The update and the recovery of velocity
 
