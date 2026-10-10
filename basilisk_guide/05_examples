@@ -161,6 +161,74 @@ four times. At $t = 0$ the column's edges lie exactly on cell faces, so every
 cell is full or empty and `output_facets()` writes nothing; the initial
 rectangle is drawn directly. Right: position of the front along the floor.](https://raw.githubusercontent.com/a-k-sangwan/basilisk-guide/main/basilisk_guide/figures/fig_dambreak.png)
 
+## From the sandbox: a wave growing on a sheared interface {#sec:ex-shear}
+
+This case is not one of the four programs above and was not run for this
+guide. It is the author's sandbox case
+[sandbox/aksangwan/shear_flow](/sandbox/aksangwan/shear_flow/), shown here because
+it uses several techniques the other examples do not: an initial condition
+computed by an external program, an interface built from a list of points,
+and restarting from a dump file.
+
+A lighter fluid ($\rho_2/\rho_1 = 0.5$) lies over a heavier one at rest, in
+a periodic box one wavelength wide ($\lambda = 2\pi/k = 21.5$ cm, CGS units,
+$g = 980$, $\sigma = 72$, both fluids inviscid). The top wall moves at
+$U_0 = 199.6$ cm/s and the upper fluid has the exponential profile
+$U(y) = U_0(1 - e^{-y/b})$ with $b = 2.54$ cm. The interface starts as
+$\eta = a\cos kx$, $a = 0.0685$ cm, with the velocity of the corresponding
+unstable mode of linear theory, whose complex wave speed is
+$c = 61.26 + 22.55\,i$ cm/s. In the linear stage the amplitude should
+therefore grow like $e^{k c_i t}$ with $k c_i = 6.59$ s$^{-1}$, which is the
+first thing to check in the output.
+
+~~~literatec
+u.n[top]    = dirichlet(0.);
+u.n[bottom] = dirichlet(0.);
+u.t[top]    = dirichlet(U0);    // moving wall drives the shear
+u.t[bottom] = neumann(0.);
+...
+periodic (right);
+G.y = -gG;
+f.sigma = 72.;
+rho1 = 1.0; rho2 = density_ratio*rho1;
+mu1 = 0.;   mu2 = 0.;
+~~~
+
+**What to notice.**
+
+- The velocity
+  of the linear mode involves hypergeometric functions of complex argument,
+  which are easier to evaluate in Python (`scipy.special.hyp2f1`). The
+  `init` event writes the centre of every cell to a file with
+  `foreach()`, calls `genData.py` through `system()`, then
+  reads the velocities back in a second `foreach()` in the same order.
+  This works because both loops visit the cells in the same order, which is
+  true only in a serial run. With `-fopenmp`, `qcc` refuses to
+  compile a `foreach()` that increments a shared counter. A version that
+  also runs in parallel would have Python tabulate the profiles $\hat u(y)$
+  and $\hat v(y)$ once on a fine one-dimensional grid, and `init` would
+  interpolate them at each cell and multiply by $e^{ikx}$.
+
+- `distance.h`
+  reads the points $(x, \eta(x))$ with `input_xy()` and computes the
+  signed distance to that curve at every cell centre. The program averages
+  it to the vertices and calls `fractions (phi, f)`, as in
+  [chapter 17](17_vof). `distance.h` works only in serial.
+
+- `./run -r 20` sets the dump file name
+  before `run()`. The `init` event tries `restore()` first
+  and only builds the initial condition if that fails, which is the usual
+  Basilisk pattern for restarts ([chapter 3](03_setup)).
+
+- The adaptation criterion includes the
+  curvature from `curvature (f, KAPPA)`. `curvature()` sets
+  `KAPPA` to `nodata` away from the interface, and
+  `adapt_wavelet()` has no special case for `nodata`, so the jump
+  between a defined curvature and `nodata` counts as a large error.
+  Only interface cells have a defined curvature, and the `f` criterion
+  already refines those, so the curvature criterion mainly matters where the
+  curvature itself varies quickly along the interface.
+
 ## Where to go next
 
 Change one thing at a time and look at what happens: raise the level and

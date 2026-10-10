@@ -14,7 +14,7 @@ This guide teaches Basilisk in three parts. The first part is practical: the Bas
 2. [The Basilisk language](02_language)
 3. [Setting up, running and restarting a case](03_setup)
 4. [Getting data out: output and diagnostics](04_output)
-5. [Four worked examples](05_examples) (programs: [cavity.c](examples/cavity.c), [karman.c](examples/karman.c), [bubble.c](examples/bubble.c), [dambreak.c](examples/dambreak.c))
+5. [Four worked examples](05_examples) (programs: [cavity.c](examples/cavity.c), [karman.c](examples/karman.c), [bubble.c](examples/bubble.c), [dambreak.c](examples/dambreak.c); plus the [shear-flow case](/sandbox/aksangwan/shear_flow/) from the sandbox)
 6. [Common pitfalls and how to diagnose a run](06_pitfalls)
 
 ## Part II: How the solver works
