@@ -28,9 +28,8 @@ $$
  + \nabla\cdot(2\mu\mathbf{D}) + \rho\mathbf{g}+ \sigma\kappa\,\delta_s\mathbf{n},
 \\
 \nabla\cdot\mathbf{u}&= 0,
-
 \end{aligned}
-\tag{8.4--8.5}
+\tag{8.4, 8.5}
 $$
 with the rate-of-strain tensor $\mathbf{D}= \tfrac{1}{2}(\nabla\mathbf{u}+ \nabla\mathbf{u}^T)$, gravity
 $\mathbf{g}$, surface tension coefficient $\sigma$, interface curvature $\kappa$,

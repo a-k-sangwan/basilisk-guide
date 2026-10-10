@@ -166,9 +166,9 @@ def display(m):
     b = re.sub(r"\\tag\{[^}]*\}", "", b)
     b = re.sub(r"\\(begin|end)\{equation\*?\}", "", b)
     b = re.sub(r"\\(begin|end)\{align\*?\}", r"\\\1{aligned}", b)
-    b = b.strip()
+    b = re.sub(r"\n[ \t]*\n+", "\n", b.strip())   # a blank line ends display math in pandoc
     if tags:
-        b += "\n\\tag{%s}" % (tags[0] if len(tags) == 1 else tags[0] + "--" + tags[-1])
+        b += "\n\\tag{%s}" % ", ".join(tags)
     return "$$\n" + b + "\n$$"
 
 # ---------- per chapter ----------
