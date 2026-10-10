@@ -55,7 +55,7 @@ $v_0$ and $v_1$, with quadratic interpolation along the grid line. A
 quadratic through $(0, s_b)$, $(d_0, v_0)$, $(d_1, v_1)$ has slope at the
 wall
 $$
-\partial_n s\big|_b = \frac{1}{\Delta}\,\frac{d_1\dfrac{v_0 - s_b}{d_0} - d_0\dfrac{v_1 - s_b}{d_1}}{d_1 - d_0},
+\partial_n s\big|_b = \dfrac{1}{\Delta}\,\dfrac{d_1\dfrac{v_0 - s_b}{d_0} - d_0\dfrac{v_1 - s_b}{d_1}}{d_1 - d_0},
 $$
 which is a third-order estimate. If the second point is not available the
 code uses the second-order $(v_0 - s_b)/(d_0\Delta)$, and in degenerate cases

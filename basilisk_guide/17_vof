@@ -79,7 +79,7 @@ $$
 The right-hand side is the *compression term*. Discretised over one
 sweep:
 $$
-f_i \leftarrow f_i + \frac{\Delta t}{c_{m}\Delta}\left[F_{i-\frac 12}- F_{i+\frac 12}+ \chi_i\left(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}}\right)\right].
+f_i \leftarrow f_i + \dfrac{\Delta t}{c_{m}\Delta}\left[F_{i-\dfrac 12}- F_{i+\dfrac 12}+ \chi_i\left(u_{f,{i+\dfrac 12}} - u_{f,{i-\dfrac 12}}\right)\right].
 \qquad (17.5)
 $$
 The sweeps run in the order $x, y, z$ on even steps and rotate on odd steps
@@ -88,12 +88,12 @@ always favour the same direction.
 
 ## The geometric flux {#sec:vofflux}
 
-During one sweep, the fluid that crosses face ${i+\frac 12}$ is the strip of the
+During one sweep, the fluid that crosses face ${i+\dfrac 12}$ is the strip of the
 upwind cell of width $|u|\Delta t$ next to the face (figure 17.3). The
 volume of water in that strip is computed exactly from the reconstructed
 line:
 $$
-F_{i+\frac 12}= c_f\,u_{f,{i+\frac 12}},\qquad
+F_{i+\dfrac 12}= c_f\,u_{f,{i+\dfrac 12}},\qquad
 c_f = \text{fraction of the strip below the line}.
 $$
 `rectangle_fraction()` computes $c_f$ by rescaling the strip to a unit
@@ -132,7 +132,7 @@ the scheme conserve volume exactly. Sum (17.5) over all
 sweeps and all cells. The flux differences telescope to the fluxes through
 the domain boundary. The compression terms add up, for each cell, to
 $$
-\frac{\Delta t}{\Delta}\,\chi_i\sum_d\left(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}}\right)_d = \Delta t\,\chi_i\,(\mathcal{D}\mathbf{u}_f)_i = 0,
+\dfrac{\Delta t}{\Delta}\,\chi_i\sum_d\left(u_{f,{i+\dfrac 12}} - u_{f,{i-\dfrac 12}}\right)_d = \Delta t\,\chi_i\,(\mathcal{D}\mathbf{u}_f)_i = 0,
 $$
 because $\chi_i$ is the same in every sweep and $\mathbf{u}_f$ is discretely
 divergence-free after the projection ([chapter 15](15_projection)). Total water

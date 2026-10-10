@@ -214,6 +214,7 @@ for stem in order:
     out = re.sub(r"^((?:> )?)```$", r"\1~~~", out, flags=re.M)
     out = re.sub(r"\$\$(.*?)\$\$", display, out, flags=re.S)
     out = re.sub(r" \{#[^ }]* \.unnumbered\}$", "", out, flags=re.M)
+    out = re.sub(r"\\frac(?![a-zA-Z])", r"\\dfrac", out)   # the wiki typesets inline; keep fractions full size
     out = re.sub(r"^: (.*?) \{#([^}]*)\}$",
                  lambda m: ": Table %s: %s" % (labels.get(m.group(2), ("", "?"))[1], m.group(1)),
                  out, flags=re.S | re.M)

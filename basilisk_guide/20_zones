@@ -32,11 +32,11 @@ A damping (sponge) layer adds a drag $-\sigma\mathbf{u}$ to the momentum
 equation. Integrated explicitly, $u^{n+1} = u^n(1 - \sigma\Delta t)$ changes sign
 and grows if $\sigma\Delta t> 2$. Integrated implicitly (backward Euler),
 $$
-\frac{u^{n+1} - u^n}{\Delta t} = -\sigma u^{n+1}
+\dfrac{u^{n+1} - u^n}{\Delta t} = -\sigma u^{n+1}
 \;\Longrightarrow\;
-u^{n+1} = \frac{u^n}{1 + \sigma\Delta t}
+u^{n+1} = \dfrac{u^n}{1 + \sigma\Delta t}
 \;\Longleftrightarrow\;
-\frac{u^{n+1} - u^n}{\Delta t} = -\frac{\sigma\,u^n}{1 + \sigma\Delta t},
+\dfrac{u^{n+1} - u^n}{\Delta t} = -\dfrac{\sigma\,u^n}{1 + \sigma\Delta t},
 $$
 which is stable for any $\sigma\Delta t$. The last form is an acceleration that
 depends only on known values, so it can be added to the face acceleration
@@ -77,7 +77,7 @@ its velocity, but it is not volume-conserving.
 A relaxation zone pulls the solution towards a target state $q_T$ (an
 incoming wave, a uniform flow):
 $$
-\frac{dq}{dt} = -\sigma\,(q - q_T).
+\dfrac{dq}{dt} = -\sigma\,(q - q_T).
 $$
 Over one step with $q_T$ held fixed, the exact solution is
 $$

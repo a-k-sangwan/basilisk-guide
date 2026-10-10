@@ -63,12 +63,12 @@ box explains a general CFD idea or a rule to remember.
 > $\Delta$ is the size of the current cell (`Delta` in the code), $\Delta t$ the time
 > step (`dt`), and superscripts $n$, $n+\tfrac{1}{2}$, $n+1$ are time levels.
 > Cell centres have integer indices $i, j, k$; faces have half indices, so
-> $u_{f,{i+\frac 12}}$ is the face velocity between cells $i$ and $i+1$. In Basilisk
+> $u_{f,{i+\dfrac 12}}$ is the face velocity between cells $i$ and $i+1$. In Basilisk
 > code `s[]` is the value in the current cell, `s[1]` its right
 > neighbour and `s[-1]` its left neighbour; `s[0,1]` is the neighbour
 > above. A face field value `uf.x[]` lives on the *left* face of the
-> current cell, so `uf.x[]` is $u_{f,{i-\frac 12}}$ and `uf.x[1]` is
-> $u_{f,{i+\frac 12}}$. A full symbol table is in [chapter A](A_notation).
+> current cell, so `uf.x[]` is $u_{f,{i-\dfrac 12}}$ and `uf.x[1]` is
+> $u_{f,{i+\dfrac 12}}$. A full symbol table is in [chapter A](A_notation).
 
 ## Where to find more
 

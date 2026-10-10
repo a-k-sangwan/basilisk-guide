@@ -9,7 +9,7 @@ body of the `acceleration` event, in `centered.h`, builds the
 provisional face velocity
 $$
 u_f^\star = f_m\left(\overline{u} + \Delta t\,a\right),\qquad
-\overline{u}_{i-\frac 12}= \tfrac12(u_{i-1} + u_i).
+\overline{u}_{i-\dfrac 12}= \tfrac12(u_{i-1} + u_i).
 \qquad (14.1)
 $$
 
@@ -52,8 +52,8 @@ potentials: being defined earlier, it runs after them.
 normal to it, $\phi\,\mathbf{n}\,\delta_s$, by $\phi\nabla f$ ([section 8.4](08_equations#sec:reduced-derivation)).
 On the face between cells $i-1$ and $i$:
 $$
-a_{i-\frac 12}\mathrel{+}= \frac{\alpha_{i-\frac 12}}{f_{m,{i-\frac 12}}}\;\phi_{i-\frac 12}\;\frac{f_i - f_{i-1}}{\Delta},
-\qquad \phi_{i-\frac 12}= \tfrac12(\phi_{i-1} + \phi_i),
+a_{i-\dfrac 12}\mathrel{+}= \dfrac{\alpha_{i-\dfrac 12}}{f_{m,{i-\dfrac 12}}}\;\phi_{i-\dfrac 12}\;\dfrac{f_i - f_{i-1}}{\Delta},
+\qquad \phi_{i-\dfrac 12}= \tfrac12(\phi_{i-1} + \phi_i),
 \qquad (14.2)
 $$
 where $\alpha/f_m = 1/\rho$ on the face. $\phi$ is only defined in cells that
@@ -97,7 +97,7 @@ solution is $\mathbf{u}= 0$ with $p = \phi f + \text{const}$: the pressure jump
 balances the force. In the projection ([chapter 15](15_projection)) the face
 velocity becomes
 $$
-u_f^{n+1} = \Delta t\,\alpha\left(\phi\,\frac{f_i - f_{i-1}}{\Delta} - \frac{p_i - p_{i-1}}{\Delta}\right).
+u_f^{n+1} = \Delta t\,\alpha\left(\phi\,\dfrac{f_i - f_{i-1}}{\Delta} - \dfrac{p_i - p_{i-1}}{\Delta}\right).
 $$
 Because the force and the pressure gradient use the same two cells and the
 same weight $\alpha$, the discrete pressure $p_i = \phi f_i$ makes this zero
@@ -131,13 +131,13 @@ full cell at one end and an empty cell at the other (so it crosses the
 interface once), and gives up if the interface is farther than 5.5 cells. Differencing neighbouring heights gives the slope and
 curvature:
 $$
-h_x = \frac{h_{i+1} - h_{i-1}}{2\Delta},\quad
-h_{xx} = \frac{h_{i+1} - 2h_i + h_{i-1}}{\Delta^2},\quad
-\kappa = \frac{h_{xx}}{(1 + h_x^2)^{3/2}}
+h_x = \dfrac{h_{i+1} - h_{i-1}}{2\Delta},\quad
+h_{xx} = \dfrac{h_{i+1} - 2h_i + h_{i-1}}{\Delta^2},\quad
+\kappa = \dfrac{h_{xx}}{(1 + h_x^2)^{3/2}}
 $$
 in 2D, and
 $$
-\kappa = \frac{h_{xx}(1 + h_y^2) + h_{yy}(1 + h_x^2) - 2h_{xy}h_xh_y}{(1 + h_x^2 + h_y^2)^{3/2}}
+\kappa = \dfrac{h_{xx}(1 + h_y^2) + h_{yy}(1 + h_x^2) - 2h_{xy}h_xh_y}{(1 + h_x^2 + h_y^2)^{3/2}}
 $$
 in 3D. The heights are second-order accurate and the curvature converges
 with mesh refinement, which plain derivatives of $f$ do not. Where heights

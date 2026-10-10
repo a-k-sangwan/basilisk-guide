@@ -14,7 +14,7 @@ $$
 Discretised as in [(15.5)](15_projection) and solved for the centre value,
 it gives the update
 $$
-a_i \leftarrow \frac{\sum_{\text{faces}}\alpha_f\,a_{\text{nb}(f)} - \Delta^2 b_i}
+a_i \leftarrow \dfrac{\sum_{\text{faces}}\alpha_f\,a_{\text{nb}(f)} - \Delta^2 b_i}
 {\sum_{\text{faces}}\alpha_f - \lambda_i\Delta^2},
 \qquad (16.2)
 $$

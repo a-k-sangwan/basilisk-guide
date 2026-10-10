@@ -12,7 +12,7 @@ $$
 Taking the divergence of the first equation and using the second gives the
 variable-coefficient Poisson equation
 $$
-\boxed{\;\nabla\cdot\left(\alpha\,\nabla p^{n+1}\right) = \frac{\nabla\cdot\mathbf{u}_f^\star}{\Delta t}\;}
+\boxed{\;\nabla\cdot\left(\alpha\,\nabla p^{n+1}\right) = \dfrac{\nabla\cdot\mathbf{u}_f^\star}{\Delta t}\;}
 \qquad (15.2)
 $$
 with $\alpha = 1/\rho$. This is the Helmholtz--Hodge decomposition of
@@ -33,23 +33,23 @@ Define the discrete divergence of a face field and the discrete face gradient
 of a cell field:
 $$
 \begin{aligned}
-(\mathcal{D}\mathbf{u}_f)_i &= \frac{1}{\Delta}\sum_{d}\left(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}}\right)_d,\\
-(\mathcal{G}p)_{i-\frac 12}&= \frac{p_i - p_{i-1}}{\Delta}.
+(\mathcal{D}\mathbf{u}_f)_i &= \dfrac{1}{\Delta}\sum_{d}\left(u_{f,{i+\dfrac 12}} - u_{f,{i-\dfrac 12}}\right)_d,\\
+(\mathcal{G}p)_{i-\dfrac 12}&= \dfrac{p_i - p_{i-1}}{\Delta}.
 \end{aligned}
 $$
 The face velocity already contains the open-area factor $f_m$, so
 $u_f\,\Delta^{d-1}$ is the volume flux through the face and $\mathcal{D}$ is a
 finite-volume divergence. Then (15.2) becomes
 $$
-\sum_d \frac{\alpha_{i+\frac 12}(p_{i+1} - p_i) - \alpha_{i-\frac 12}(p_i - p_{i-1})}{\Delta^2}
-= \frac{(\mathcal{D}\mathbf{u}_f^\star)_i}{\Delta t},
+\sum_d \dfrac{\alpha_{i+\dfrac 12}(p_{i+1} - p_i) - \alpha_{i-\dfrac 12}(p_i - p_{i-1})}{\Delta^2}
+= \dfrac{(\mathcal{D}\mathbf{u}_f^\star)_i}{\Delta t},
 \qquad (15.5)
 $$
 a 5-point (2D) or 7-point (3D) Laplacian weighted by the face values of
 $\alpha$. It is solved by multigrid ([chapter 16](16_multigrid)), then each face is
 corrected:
 $$
-u_{f,{i-\frac 12}}^{n+1} = u_{f,{i-\frac 12}}^\star - \Delta t\,\alpha_{i-\frac 12}\,(\mathcal{G}p^{n+1})_{i-\frac 12}.
+u_{f,{i-\dfrac 12}}^{n+1} = u_{f,{i-\dfrac 12}}^\star - \Delta t\,\alpha_{i-\dfrac 12}\,(\mathcal{G}p^{n+1})_{i-\dfrac 12}.
 $$
 
 **The new face velocity is divergence-free to solver tolerance.**
@@ -57,7 +57,7 @@ The discrete Laplacian in (15.5) is exactly
 $\mathcal{D}(\alpha\mathcal{G}p)$, so
 $$
 \mathcal{D}\mathbf{u}_f^{n+1} = \mathcal{D}\mathbf{u}_f^\star - \Delta t\,\mathcal{D}(\alpha\mathcal{G}p^{n+1})
-= \Delta t\left[\frac{\mathcal{D}\mathbf{u}_f^\star}{\Delta t} - \mathcal{D}(\alpha\mathcal{G}p^{n+1})\right]
+= \Delta t\left[\dfrac{\mathcal{D}\mathbf{u}_f^\star}{\Delta t} - \mathcal{D}(\alpha\mathcal{G}p^{n+1})\right]
 = \Delta t\cdot\text{residual}.
 $$
 If the Poisson equation were solved exactly, the face velocity would be
@@ -97,7 +97,7 @@ incomplete convergence. The solver prints a warning when it reaches
 
 ## Variable density and the density ratio
 
-The face coefficient is $\alpha_{i-\frac 12}= f_{m,{i-\frac 12}}/\rho(\bar f_{i-\frac 12})$, with
+The face coefficient is $\alpha_{i-\dfrac 12}= f_{m,{i-\dfrac 12}}/\rho(\bar f_{i-\dfrac 12})$, with
 $\bar f$ the average of the two cell values. Across a water--air interface it
 jumps from $1$ to $1/0.001225 \approx 816$. A Poisson equation with a
 coefficient that jumps by three orders of magnitude over one cell is much
@@ -109,11 +109,11 @@ harder to solve than the constant-coefficient case; you see it as larger
 The cell-centred velocity still has to be corrected. `centered.h` forms
 on each face the total acceleration, force plus pressure gradient,
 $$
-g_{f,{i-\frac 12}} = f_{m,{i-\frac 12}}\,a_{i-\frac 12}- \alpha_{i-\frac 12}\,(\mathcal{G}p^{n+1})_{i-\frac 12},
+g_{f,{i-\dfrac 12}} = f_{m,{i-\dfrac 12}}\,a_{i-\dfrac 12}- \alpha_{i-\dfrac 12}\,(\mathcal{G}p^{n+1})_{i-\dfrac 12},
 $$
 averages the two faces of each cell,
 $$
-\mathbf{g}_i = \frac{g_{f,{i-\frac 12}} + g_{f,{i+\frac 12}}}{f_{m,{i-\frac 12}} + f_{m,{i+\frac 12}}},
+\mathbf{g}_i = \dfrac{g_{f,{i-\dfrac 12}} + g_{f,{i+\dfrac 12}}}{f_{m,{i-\dfrac 12}} + f_{m,{i+\dfrac 12}}},
 \qquad (15.9)
 $$
 and updates $\mathbf{u}^{n+1} = \mathbf{u}^{\star\star} + \Delta t\,\mathbf{g}$. This makes
@@ -146,7 +146,7 @@ value of the normal velocity is antisymmetric ([chapter 18](18_boundary)), so
 $\overline{u} = 0$ on the wall face and $u_f^\star = \Delta t\,f_m a$ there. Setting
 $u_f^{n+1} = 0$ in (15.1) gives
 $$
-\left.\frac{\partial p}{\partial n}\right|_{\text{wall}} = \frac{f_m\,a_n}{\alpha}:
+\left.\dfrac{\partial p}{\partial n}\right|_{\text{wall}} = \dfrac{f_m\,a_n}{\alpha}:
 $$
 the pressure gradient at the wall must balance the force pushing into it.
 This is the default pressure condition on every domain side in

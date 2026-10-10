@@ -56,7 +56,7 @@ stress), and (8.5) gives continuity of normal velocity.
 `centered.h` writes the momentum equation per unit mass, with all body
 and interfacial forces collected in one acceleration $\mathbf{a}$:
 $$
-\partial_t\mathbf{u}+ \nabla\cdot(\mathbf{u}\otimes\mathbf{u}) = \frac{1}{\rho}\left[-\nabla p
+\partial_t\mathbf{u}+ \nabla\cdot(\mathbf{u}\otimes\mathbf{u}) = \dfrac{1}{\rho}\left[-\nabla p
  + \nabla\cdot(2\mu\mathbf{D})\right] + \mathbf{a}.
 \qquad (8.6)
 $$

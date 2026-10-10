@@ -8,7 +8,7 @@ two-phase flow with an embedded solid, using `centered.h`,
 `embed.h`, on an adaptive tree. Simpler cases skip some of the steps.
 
 Starting values: $\mathbf{u}^n$, $p^n$, $\mathbf{g}^n$, the projected face velocity
-$\mathbf{u}_f^n$, the volume fraction $f^{n-\frac 12}$, the geometry $c_s$, $f_s$.
+$\mathbf{u}_f^n$, the volume fraction $f^{n-\dfrac 12}$, the geometry $c_s$, $f_s$.
 
 1.  The `stability` event takes $\Delta t$ from the CFL condition on
     $\mathbf{u}_f^n$ with $C = 0.5$, smoothed and adjusted to the next output time
@@ -19,7 +19,7 @@ $\mathbf{u}_f^n$, the volume fraction $f^{n-\frac 12}$, the geometry $c_s$, $f_s
     (MYC normal, PLIC intercept). For each direction in rotating order, compute
     geometric fluxes of $f$ and the consistent fluxes of $q_1$, $q_2$, and update
     with the Weymouth--Yue compression term. Recover
-    $\mathbf{u}^\star = (q_1 + q_2)/\rho(f^{n+\frac 12})$ ([chapter 17](17_vof) and [chapter 12](12_momentum)).
+    $\mathbf{u}^\star = (q_1 + q_2)/\rho(f^{n+\dfrac 12})$ ([chapter 17](17_vof) and [chapter 12](12_momentum)).
 
 3.  The `properties` event sets, on faces,
     $\alpha = f_s/\rho(\bar f)$ and $\mu = f_s\,\mu(\bar f)$; at centres

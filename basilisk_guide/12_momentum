@@ -32,7 +32,7 @@ water volume, $\rho_1 u$. Likewise $\mathbf{q}_2$ is a tracer of $1 - f$
 $$
 \begin{aligned}
 \text{volume flux of water:}\quad & F_f = c_f\,u_f, \\
-\text{flux of } q_1:\quad & F_{q_1} = \Big[\rho_1 u_i + s\min(1,1 - s\,u_n)\,\partial_x(\rho_1 u)_i\,\frac{\Delta}{2}\Big]\,c_f\,u_f, \\
+\text{flux of } q_1:\quad & F_{q_1} = \Big[\rho_1 u_i + s\min(1,1 - s\,u_n)\,\partial_x(\rho_1 u)_i\,\dfrac{\Delta}{2}\Big]\,c_f\,u_f, \\
 \text{flux of } q_2:\quad & F_{q_2} = \Big[\rho_2 u_i + \dots\Big]\,(1 - c_f)\,u_f,
 \end{aligned}
 $$
@@ -54,15 +54,15 @@ For each sweep, $f$, $q_1$ and $q_2$ are updated together with the
 one-dimensional equations of [section 17.2](17_vof#sec:split):
 $$
 \begin{aligned}
-f_i &\mathrel{+}= \frac{\Delta t}{\Delta}\left[F_{f,{i-\frac 12}} - F_{f,{i+\frac 12}} + \chi_i\,(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}})\right],\\
-q_{1,i} &\mathrel{+}= \frac{\Delta t}{\Delta}\left[F_{q_1,{i-\frac 12}} - F_{q_1,{i+\frac 12}} + \chi_i\,\rho_1 u_i\,(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}})\right],
+f_i &\mathrel{+}= \dfrac{\Delta t}{\Delta}\left[F_{f,{i-\dfrac 12}} - F_{f,{i+\dfrac 12}} + \chi_i\,(u_{f,{i+\dfrac 12}} - u_{f,{i-\dfrac 12}})\right],\\
+q_{1,i} &\mathrel{+}= \dfrac{\Delta t}{\Delta}\left[F_{q_1,{i-\dfrac 12}} - F_{q_1,{i+\dfrac 12}} + \chi_i\,\rho_1 u_i\,(u_{f,{i+\dfrac 12}} - u_{f,{i-\dfrac 12}})\right],
 \end{aligned}
 $$
 where $\chi_i = 1$ if $f_i > 0.5$ and $0$ otherwise (the step function of
 Weymouth and Yue, [section 17.4](17_vof#sec:wy)). After all sweeps the velocity is
 recovered from the total momentum and the new density:
 $$
-\mathbf{u}^\star = \frac{\mathbf{q}_1 + \mathbf{q}_2}{\rho(f^{n+\frac 12})}.
+\mathbf{u}^\star = \dfrac{\mathbf{q}_1 + \mathbf{q}_2}{\rho(f^{n+\dfrac 12})}.
 $$
 
 > **In the code: `navier-stokes/conserving.h`**
@@ -84,7 +84,7 @@ $\chi_i\rho_1 u_i = \rho_1 U\chi_i$. So the $q_1$ update is exactly
 $\rho_1 U$ times the $f$ update, and $q_1^{\text{new}} = \rho_1 U f^{\text{new}}$.
 The same holds for $q_2$ with $1 - f$. Therefore
 $$
-\mathbf{u}^{\text{new}} = \frac{\rho_1 U f^{\text{new}} + \rho_2 U(1 - f^{\text{new}})}{\rho(f^{\text{new}})} = U
+\mathbf{u}^{\text{new}} = \dfrac{\rho_1 U f^{\text{new}} + \rho_2 U(1 - f^{\text{new}})}{\rho(f^{\text{new}})} = U
 $$
 exactly, whatever the density ratio and however the interface moved. The
 non-conservative BCG scheme has no such property: moving density with one
@@ -97,7 +97,7 @@ would change the total momentum because density differs between children.
 `conserving.h` replaces the operators:
 $$
 \begin{aligned}
-\text{restriction:}\quad & u_{\text{parent}} = \frac{\sum_c c_{m,c}\,\rho(f_c)\,u_c}{2^d\,c_{m,p}\,\rho(f_p)},\\
+\text{restriction:}\quad & u_{\text{parent}} = \dfrac{\sum_c c_{m,c}\,\rho(f_c)\,u_c}{2^d\,c_{m,p}\,\rho(f_p)},\\
 \text{refinement:}\quad & u_c = u_c^{\text{bilinear}} + \delta u,\quad
  \delta u \text{ chosen so that } \sum_c c_{m,c}\,\rho(f_c)\,u_c = 2^d c_{m,p}\,\rho(f_p)\,u_p.
 \end{aligned}
