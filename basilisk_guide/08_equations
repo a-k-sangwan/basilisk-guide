@@ -14,12 +14,12 @@ $$
 \partial_t f + \mathbf{u}\cdot\nabla f = 0
 \quad\Longleftrightarrow\quad
 \partial_t f + \nabla\cdot(f\mathbf{u}) = 0 \ \text{ (because } \nabla\cdot\mathbf{u}= 0).
-\tag{8.2}
+\qquad (8.2)
 $$
 The mixture properties are
 $$
 \rho(f) = f\rho_1 + (1 - f)\rho_2,\qquad \mu(f) = f\mu_1 + (1 - f)\mu_2.
-\tag{8.3}
+\qquad (8.3)
 $$
 The momentum and continuity equations for the mixture are
 $$
@@ -29,7 +29,7 @@ $$
 \\
 \nabla\cdot\mathbf{u}&= 0,
 \end{aligned}
-\tag{8.4, 8.5}
+\qquad (8.4, 8.5)
 $$
 with the rate-of-strain tensor $\mathbf{D}= \tfrac{1}{2}(\nabla\mathbf{u}+ \nabla\mathbf{u}^T)$, gravity
 $\mathbf{g}$, surface tension coefficient $\sigma$, interface curvature $\kappa$,
@@ -58,7 +58,7 @@ and interfacial forces collected in one acceleration $\mathbf{a}$:
 $$
 \partial_t\mathbf{u}+ \nabla\cdot(\mathbf{u}\otimes\mathbf{u}) = \frac{1}{\rho}\left[-\nabla p
  + \nabla\cdot(2\mu\mathbf{D})\right] + \mathbf{a}.
-\tag{8.6}
+\qquad (8.6)
 $$
 Because $\nabla\cdot\mathbf{u}= 0$, $\nabla\cdot(\mathbf{u}\otimes\mathbf{u}) = \mathbf{u}\cdot\nabla\mathbf{u}$, so
 (8.6) is (8.4) divided by $\rho$. The solver stores
@@ -77,7 +77,7 @@ equation
 $$
 \partial_t(\rho\mathbf{u}) + \nabla\cdot(\rho\mathbf{u}\otimes\mathbf{u}) = -\nabla p + \nabla\cdot(2\mu\mathbf{D})
  + \rho\mathbf{g}+ \sigma\kappa\delta_s\mathbf{n}.
-\tag{8.7}
+\qquad (8.7)
 $$
 In exact arithmetic (8.4) and (8.7) are the same. In a
 discrete scheme they are not. If mass ($f$, hence $\rho$) is moved with one
@@ -105,7 +105,7 @@ away from the interface, so gravity now acts only at the interface, as a
 force of the form $\phi\nabla f$ with
 $$
 \phi = (\rho_2 - \rho_1)\,\mathbf{g}\cdot(\mathbf{x}- \mathbf{Z}),
-\tag{8.8}
+\qquad (8.8)
 $$
 where the reference level $\mathbf{Z}$ only shifts $p'$ by a constant inside
 each phase. Surface tension has the same form, $\sigma\kappa\delta_s\mathbf{n}=

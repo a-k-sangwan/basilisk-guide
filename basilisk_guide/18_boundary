@@ -23,14 +23,14 @@ between the two centres gives the face value $\tfrac12(s_i + s_g)$; setting
 it to $s_b$ gives
 $$
 s_g = 2s_b - s_i.
-\tag{18.1}
+\qquad (18.1)
 $$
 
 **Neumann, $\partial_n s = q$ on the boundary.** The face gradient
 $(s_g - s_i)/\Delta$ must equal $q$:
 $$
 s_g = s_i + \Delta\,q.
-\tag{18.2}
+\qquad (18.2)
 $$
 
 **A bare expression.** If the condition is an expression without

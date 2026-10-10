@@ -9,7 +9,7 @@ $$
 with backward Euler ([section 7.5](07_cfd_concepts#sec:implicit)):
 $$
 \frac{\rho}{\Delta t}\mathbf{u}^{n+1} - \nabla\cdot\left[\mu(\nabla\mathbf{u}+ \nabla\mathbf{u}^T)\right]^{n+1} = \frac{\rho}{\Delta t}\mathbf{u}^{\text{old}},
-\tag{13.2}
+\qquad (13.2)
 $$
 with $\rho$ and $\mu$ at $t^{n+\frac 12}$. Backward Euler is first order in time but
 unconditionally stable. The unknown is the whole velocity vector because the
@@ -53,7 +53,7 @@ relaxation ([chapter 16](16_multigrid)):
 $$
 u_{ij} \leftarrow \frac{r_{ij}\Delta^2 + \frac{\Delta t}{\rho}\,N_{ij}}
 {\Delta^2 + \frac{\Delta t}{\rho}\left(2\mu_{i+\frac 12}+ 2\mu_{i-\frac 12}+ \mu_{j+\frac12} + \mu_{j-\frac12}\right)},
-\tag{13.8}
+\qquad (13.8)
 $$
 with the neighbour terms
 $$

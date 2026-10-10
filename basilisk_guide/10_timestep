@@ -41,7 +41,7 @@ The `stability` event computes the largest stable step from the face
 velocity:
 $$
 \Delta t_{\text{CFL}} = C_{\max}\,\min_{\text{faces}}\frac{\Delta\,f_m}{|u_f|},
-\tag{10.1}
+\qquad (10.1)
 $$
 where $u_f$ already contains the factor $f_m$ (the face is partly blocked by
 the solid), so $\Delta f_m/|u_f| = \Delta/|u|$ for the actual velocity $u$.

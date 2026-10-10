@@ -74,13 +74,13 @@ not divergence-free, so the sweep solves the 1D form of
 $\partial_t f + \mathbf{u}\cdot\nabla f = 0$ written with a flux:
 $$
 \partial_t f + \partial_x(u f) = f\,\partial_x u.
-\tag{17.4}
+\qquad (17.4)
 $$
 The right-hand side is the *compression term*. Discretised over one
 sweep:
 $$
 f_i \leftarrow f_i + \frac{\Delta t}{c_{m}\Delta}\left[F_{i-\frac 12}- F_{i+\frac 12}+ \chi_i\left(u_{f,{i+\frac 12}} - u_{f,{i-\frac 12}}\right)\right].
-\tag{17.5}
+\qquad (17.5)
 $$
 The sweeps run in the order $x, y, z$ on even steps and rotate on odd steps
 (`sweep[(i + d) % dimension]`), so the splitting error does not

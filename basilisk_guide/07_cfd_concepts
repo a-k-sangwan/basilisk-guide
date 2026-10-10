@@ -12,7 +12,7 @@ what flows through its boundary $\partial V$ and what is produced inside:
 $$
 \frac{d}{dt}\int_V q\,dV = -\oint_{\partial V} \mathbf{F}(q)\cdot\mathbf{n}\,dS
 + \int_V s\,dV,
-\tag{7.1}
+\qquad (7.1)
 $$
 where $\mathbf{F}$ is the flux of $q$ (for advection, $\mathbf{F} = q\mathbf{u}$),
 $\mathbf{n}$ is the outward unit normal and $s$ a source. Applying the divergence
@@ -27,7 +27,7 @@ for example $F_{{i+\frac 12},j}$ through the right face. Then
 $$
 \frac{d\bar q_{ij}}{dt} = \frac{F_{{i-\frac 12},j} - F_{{i+\frac 12},j}}{\Delta}
  + \frac{G_{i,j-\frac12} - G_{i,j+\frac12}}{\Delta} + \bar s_{ij},
-\tag{7.2}
+\qquad (7.2)
 $$
 with $F$ and $G$ the $x$ and $y$ fluxes (figure 7.1). The only
 approximation is in how the face fluxes are computed from the cell averages.
@@ -86,7 +86,7 @@ $$
 face value from the upwind cell, $F_{i+\frac 12}= c\,q_i$. Then
 $$
 q_i^{n+1} = q_i^n - C\,(q_i^n - q_{i-1}^n).
-\tag{7.4}
+\qquad (7.4)
 $$
 Expanding $q_{i-1}$ and $q_i^{n+1}$ in Taylor series around $(x_i, t^n)$ and
 using the equation itself to swap time derivatives for space derivatives
@@ -94,7 +94,7 @@ shows that (7.4) solves, to second order, the *modified
 equation*
 $$
 \partial_t q + c\,\partial_x q = \underbrace{\frac{c\Delta}{2}(1 - C)}_{\nu_{\text{num}}}\,\partial_x^2 q.
-\tag{7.5}
+\qquad (7.5)
 $$
 Upwinding adds a diffusion $\nu_{\text{num}}$ that is not in the physics. It
 vanishes only at $C = 1$. This is *numerical diffusion*, and it is why
@@ -159,7 +159,7 @@ dimensions). The limit scales with $\Delta^2$, so halving the cell size cuts the
 allowed step by four. The implicit (backward Euler) update
 $$
 q_i^{n+1} - \frac{\nu\Delta t}{\Delta^2}(q_{i+1} - 2q_i + q_{i-1})^{n+1} = q_i^n
-\tag{7.6}
+\qquad (7.6)
 $$
 is stable for any $\Delta t$, at the price of solving a linear system every step.
 Basilisk treats viscosity this way ([chapter 13](13_viscosity)) and solves the

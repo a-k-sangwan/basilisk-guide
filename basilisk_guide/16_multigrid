@@ -16,7 +16,7 @@ it gives the update
 $$
 a_i \leftarrow \frac{\sum_{\text{faces}}\alpha_f\,a_{\text{nb}(f)} - \Delta^2 b_i}
 {\sum_{\text{faces}}\alpha_f - \lambda_i\Delta^2},
-\tag{16.2}
+\qquad (16.2)
 $$
 where the sums run over the $2d$ faces of the cell and $a_{\text{nb}(f)}$ is
 the neighbour across face $f$. Sweeping (16.2) over all cells,

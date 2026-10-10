@@ -168,7 +168,8 @@ def display(m):
     b = re.sub(r"\\(begin|end)\{align\*?\}", r"\\\1{aligned}", b)
     b = re.sub(r"\n[ \t]*\n+", "\n", b.strip())   # a blank line ends display math in pandoc
     if tags:
-        b += "\n\\tag{%s}" % ", ".join(tags)
+        # basilisk.fr typesets every equation with KaTeX in inline mode, where \tag fails
+        b += "\n\\qquad (%s)" % ", ".join(tags)
     return "$$\n" + b + "\n$$"
 
 # ---------- per chapter ----------
